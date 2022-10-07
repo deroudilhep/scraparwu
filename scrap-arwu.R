@@ -114,9 +114,7 @@ while(driver_version_selection == FALSE) {
 
 message("Opening browser, please do not touch anything.")
 
-rD <- rsDriver(browser = "chrome",
-               chromever = chosen_version,
-               verbose = FALSE)
+rD <- rsDriver(browser = "chrome", chromever = chosen_version, verbose = FALSE)
 # rD[["server"]]$stop()
 remDr <- rD$client
 remDr$open(silent = TRUE)
@@ -125,14 +123,11 @@ message("Data retrieving in progress. Please wait...")
 
 remDr$navigate(paste("https://www.shanghairanking.com/rankings/arwu/", year, sep = ""))
 
-next_page <- remDr$findElement(using = "class name", 
-                               "ant-pagination-next")
+next_page <- remDr$findElement(using = "class name", "ant-pagination-next")
 # next_page$clickElement()
-criterias_list <- remDr$findElement(using = "xpath", 
-                                "//table[@class='rk-table']/thead/tr/th[last()]/div/div[1]/div[@class='inputWrapper']")
+criterias_list <- remDr$findElement(using = "xpath", "//table[@class='rk-table']/thead/tr/th[last()]/div/div[1]/div[@class='inputWrapper']")
 criterias_list$clickElement()
-criterias <- remDr$findElements(using = "xpath", 
-                                "//table[@class='rk-table']/thead/tr/th[last()]/div/div[1]/div[@class='rk-tooltip']/ul/li")
+criterias <- remDr$findElements(using = "xpath", "//table[@class='rk-table']/thead/tr/th[last()]/div/div[1]/div[@class='rk-tooltip']/ul/li")
 criterias[[1]]$clickElement()
 
 page_source <- remDr$getPageSource()
@@ -189,15 +184,15 @@ data <- data %>%
          score_total = 5, 
          alumni = 6, 
          pays = 7)
-data <- data %>% 
+data <- data %>%
   mutate(rang_mondial = as.character(rang_mondial), 
-         rang_national = as.character(rang_national),
-         score_total = as.numeric(score_total),
-         alumni = as.numeric(alumni),
-         award = as.numeric(award),
-         hici = as.numeric(hici),
-         `n&s` = as.numeric(`n&s`),
-         pub = as.numeric(pub),
+         rang_national = as.character(rang_national), 
+         score_total = as.numeric(score_total), 
+         alumni = as.numeric(alumni), 
+         award = as.numeric(award), 
+         hici = as.numeric(hici), 
+         `n&s` = as.numeric(`n&s`), 
+         pub = as.numeric(pub), 
          pcp = as.numeric(pcp))
 
 last_page <- as.numeric(html_page %>%
@@ -267,13 +262,13 @@ while (active_page <= last_page) {
            pays = 7)
   data_tmp <- data_tmp %>% 
     mutate(rang_mondial = as.character(rang_mondial), 
-           rang_national = as.character(rang_national),
-           score_total = as.numeric(score_total),
-           alumni = as.numeric(alumni),
-           award = as.numeric(award),
-           hici = as.numeric(hici),
-           `n&s` = as.numeric(`n&s`),
-           pub = as.numeric(pub),
+           rang_national = as.character(rang_national), 
+           score_total = as.numeric(score_total), 
+           alumni = as.numeric(alumni), 
+           award = as.numeric(award), 
+           hici = as.numeric(hici), 
+           `n&s` = as.numeric(`n&s`), 
+           pub = as.numeric(pub), 
            pcp = as.numeric(pcp))
   
   data <- data %>% 
@@ -286,17 +281,11 @@ data_clean <- data %>%
   mutate(trash = pays) %>%
   select(-pays) %>%
   rename(pays = trash) %>%
-  separate(etablissement, c("etablissement", 
-                            "etablissement_double"), 
-           "\n") %>%
+  separate(etablissement, c("etablissement", "etablissement_double"), "\n") %>%
   select(-etablissement_double) %>%
-  mutate(etablissement = str_trim(etablissement, 
-                                  side = "right")) %>%
-  mutate(pays = str_extract(pays, 
-                            "..\\.png")) %>%
-  mutate(pays = gsub("\\.png", 
-                     "", 
-                     pays)) %>%
+  mutate(etablissement = str_trim(etablissement, side = "right")) %>%
+  mutate(pays = str_extract(pays, "..\\.png")) %>%
+  mutate(pays = gsub("\\.png", "", pays)) %>%
   # transposer tous les codes pays en leur nom en français 
   mutate(pays = gsub("^af$", "Afghanistan", pays)) %>%
   mutate(pays = gsub("^za$", "Afrique du Sud", pays)) %>%
