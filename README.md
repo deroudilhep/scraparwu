@@ -32,7 +32,7 @@ $ cd path/to/script
 $ Rscript scrap-arwu.r
 ```
 
-Le script est exécuté. Il vérifie d'abord si Java est bien installé, puis vous demande quelle année de l'ARWU vous voulez scraper, et enfin vous demander les trois premiers chiffres de votre version de *Chrome* (voir FAQ).
+Le script est exécuté. Il vérifie d'abord si Java est bien installé, puis vous demande quelle année de l'ARWU vous voulez scraper, et enfin vous demande les trois premiers chiffres de votre version de *Chrome* (voir FAQ).
 
 ## FAQ
 
