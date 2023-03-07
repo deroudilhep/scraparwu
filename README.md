@@ -45,7 +45,7 @@ Il est possible de les trouver à cette adresse, **depuis votre navigateur *Chro
 
 ## Author
 
-[deroudilhep](mailto:pierre.deroudilhe@pm.me)
+[@deroudilhep](https://github.com/deroudilhep)
 
 ## License
 
