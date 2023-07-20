@@ -1,52 +1,38 @@
 # SCRAPARWU/README
 
-Ce script R permet de *scraper* le classement de Shanghaï (ARWU) pour n'importe quelle année passée, et future lorsque les prochains classements sortiront (si la structure du site ne varie pas trop).
+Ce script R permet de scraper le classement de Shanghaï depuis se création en 2003. Il scrapera également l'année actuelle une fois que les résultats auront été publiés sur le site [shanghairanking.com](https://www.shanghairanking.com/rankings/arwu/2023).
 
-Ce script est destiné à être lancé depuis la *commande line* en utilisant `Rscript`, mais il fonctionne également en mode interactif.
-
-## Installation
+## Utilisation
 
 ### Prérequis
 
-**Premièrement**, `scrap-arwu` nécessite que Java soit installé sur l'ordinateur de l'utilisateur. Le programme vérifiera si Java est bien installé à l'exécution en posant directement la question à l'utilisateur. Voir [https://www.java.com/fr/](https://www.java.com/fr/) pour l'installation de Java.
+Le script nécessite les *packages* suivant :
 
-**Deuxièmement**, `scrap-arwu` nécessite les *packages* R suivants : *tidyverse*, *RSelenium*, *rvest*, *netstat* et *lubridate*. Voir le [site du Cran](https://cran.r-project.org/) pour plus d'informations sur ces *packages*.
+- tydiverse ;
+- RSelenium ;
+- rvest ;
+- wdman ;
+- binman ;
+- netstat ;
+- writexl.
 
-Pour les installer, ouvrez le script, et dé-commentez les lignes 40, 42, 44, 46 et 48 avant de lancer le code pour la première fois. Une fois que le script aura été lancé pour la première fois avec ces lignes dé-commentées, re-commentez les.
+Il est possible de retrouver la documentation pour ces *packages* sur le site du [CRAN](https://cran.r-project.org/web/packages/available_packages_by_name.html). Certains *packages*, comme RSelenium, requiert l'installation de Java.
 
-![Dé-commentez les lignes 40, 42, 44, 46 et 48](docs/uncomment.png)
+Si vous n'avez jamais installé rvest et RSelenium et jamais scrapé avec R auparavant, je recommande le visionnage de [cette vidéo explicative](https://www.youtube.com/watch?v=GnpJujF9dBw).
 
-**Troisièmement**, le script nécessite, pour l'instant, le navigateur *Chrome*. Vous pouvez le trouver [ici](https://www.google.com/intl/fr_fr/chrome/).
+Enfin, le navigateur Chrome est requis. Pour l'installer : [https://www.google.com/intl/fr/chrome/](https://www.google.com/intl/fr/chrome/).
 
-**Enfin**, le script nécessite R installé sur l'ordinateur de l'utilisateur, cela va de soi.
+### Variables
 
-### Installing *scrap-arwu*
+Dans le script, la variable `naver` doit être réglée sur les trois premiers chiffres de votre version de Chrome. Pour les trouver :
 
-Téléchargez le fichier et mettez-le dans un dossier. Le script créera le fichier `.csv` avec les données scrapées dans ce dossier.
-
-Ouvrez votre terminal de commande, naviguez jusqu'au dossier contenant le script `scrap-arwu` grâce à la commande `cd` et utilisez la commande `Rscript` pour lancer le script, comme ci-dessous.
-
-```sh
-cd path/to/script
-Rscript scrap-arwu.r
-```
-
-Le script est exécuté. Il vérifie d'abord si Java est bien installé, puis vous demande quelle année de l'ARWU vous voulez scraper, et enfin vous demande les trois premiers chiffres de votre version de *Chrome* (voir FAQ).
-
-## FAQ
-
-### Où trouver les trois premiers chiffres de ma version de *Chrome* ?
-
-Les trois premiers chiffres de votre version de *Chrome* permettent au script de choisir la bonne version du *Chrome driver* à utiliser pour naviguer sur internet en utilisant le package *RSelenium*.
-
-Il est possible de les trouver à cette adresse, **depuis votre navigateur *Chrome*** : [chrome://version/](chrome://version/).
+- ouvrez le navigateur Chrome et rendez-vous à cette adresse : [chrome://version/](chrome://version/) ;
+- le numéro de version se trouve tout en haut de la page :
 
 ![récupérez les trois premiers chiffres du numéro de version de votre navigateur Chrome](docs/chrome-version.png)
 
-## Author
+## Auteur et licence
 
-[@deroudilhep](https://github.com/deroudilhep)
+**Auteur :** [@deroudilhep](https://github.com/deroudilhep) pour AEF info
 
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
+**Licence :** [MIT](https://choosealicense.com/licenses/mit/)
