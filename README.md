@@ -16,7 +16,7 @@ Le script nécessite les *packages* suivant :
 - netstat ;
 - writexl.
 
-Il est possible de retrouver la documentation pour ces *packages* sur le site du [CRAN](https://cran.r-project.org/web/packages/available_packages_by_name.html). Certains *packages*, comme RSelenium, requiert l'installation de Java.
+Il est possible de retrouver la documentation pour ces *packages* sur le site du [CRAN](https://cran.r-project.org/web/packages/available_packages_by_name.html). Certains *packages*, comme RSelenium, requièrent l'installation de Java.
 
 Si vous n'avez jamais installé rvest et RSelenium et jamais scrapé avec R auparavant, je recommande le visionnage de [cette vidéo explicative](https://www.youtube.com/watch?v=GnpJujF9dBw).
 
