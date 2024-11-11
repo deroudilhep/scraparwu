@@ -1,6 +1,6 @@
 # SCRAPARWU
 
-Ce script R permet de scraper le classement de Shanghaï depuis se création en 2003. Il scrapera également l'année actuelle une fois que les résultats auront été publiés sur le site [shanghairanking.com](https://www.shanghairanking.com/rankings/arwu/2023).
+Ce script R permet de scraper le classement de Shanghaï depuis sa création en 2003. Il scrapera également l'année actuelle une fois que les résultats auront été publiés sur le site [shanghairanking.com](https://www.shanghairanking.com/rankings/arwu/2023).
 
 ## Utilisation
 
