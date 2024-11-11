@@ -8,13 +8,9 @@ Ce script R permet de scraper le classement de Shanghaï depuis sa création en 
 
 Le script nécessite les *packages* suivant :
 
-- tydiverse ;
-- RSelenium ;
-- rvest ;
-- wdman ;
-- binman ;
-- netstat ;
-- writexl.
+```r
+c("tidyverse", "RSelenium", "rvest", "wdman", "binman", "netstat", "writexl")
+```
 
 Il est possible de retrouver la documentation pour ces *packages* sur le site du [CRAN](https://cran.r-project.org/web/packages/available_packages_by_name.html). Certains *packages*, comme RSelenium, requièrent l'installation de Java.
 
@@ -33,6 +29,4 @@ Dans le script, la variable `naver` doit être réglée sur les trois premiers c
 
 ## Auteur et licence
 
-**Auteur :** [@deroudilhep](https://github.com/deroudilhep) pour AEF info
-
-**Licence :** [MIT](https://choosealicense.com/licenses/mit/)
+[@deroudilhep](https://github.com/deroudilhep) pour AEF info ; [MIT](https://choosealicense.com/licenses/mit/)
